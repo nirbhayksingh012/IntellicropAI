@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Intellicrop - AI-Powered Agricultural Assistant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-content">
+
+<div class="logo">
+<span class="logo-icon">🌱</span>
+<h1>Intellicrop</h1>
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#chatbot">AI Assistant</a></li>
+
+<li><a href="weather.html">Weather</a></li>
+
+<li><button onclick="increaseText()">👴 Large Text</button>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="container">
+
+<h2>AI Driven Smart Farming and Advisory System</h2>
+
+<p>
+Intellicrop combines artificial intelligence with real-time environmental
+data to provide actionable insights for optimal crop selection and
+fertilization strategies.
+</p>
+
+<a href="#dashboard" class="btn">Get Started</a>
+
+</div>
+
+</section>
+
+
+
+<section id="features" class="features">
+
+<div class="container">
+
+<h2 class="section-title">How Intellicrop Works</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<div class="feature-icon">🌤️</div>
+<h3>Live Weather Data</h3>
+<p>Real-time environmental conditions using OpenWeatherMap API.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🧠</div>
+<h3>AI-Powered Analysis</h3>
+<p>Analyzes soil and weather data to generate crop and fertilizer recommendations.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>Interactive Dashboard</h3>
+<p>Visualize soil health and recommendations with charts.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💬</div>
+<h3>AI Chat Assistant</h3>
+<p>Ask farming questions and receive AI-powered advice.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="dashboard" class="dashboard">
+
+<div class="container">
+
+<h2 class="section-title">Agricultural Intelligence Dashboard</h2>
+
+<div class="dashboard-container">
+
+<div class="input-panel">
+
+<h3>Enter Your Farm Details</h3>
+
+<form id="farm-data-form">
+
+<div class="form-group">
+
+<label for="location">Location</label>
+
+<input type="text" id="location" class="form-control" value="Central Valley, CA">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="nitrogen">Nitrogen (N) Level</label>
+
+<div class="range-container">
+
+<input type="range" id="nitrogen" min="0" max="100" value="65">
+
+<span id="nitrogen-value" class="range-value">65</span>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="phosphorus">Phosphorus (P) Level</label>
+
+<div class="range-container">
+
+<input type="range" id="phosphorus" min="0" max="100" value="42">
+
+<span id="phosphorus-value" class="range-value">42</span>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="potassium">Potassium (K) Level</label>
+
+<div class="range-container">
+
+<input type="range" id="potassium" min="0" max="100" value="78">
+
+<span id="potassium-value" class="range-value">78</span>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="ph">Soil pH Level</label>
+
+<div class="range-container">
+
+<input type="range" id="ph" min="4" max="9" step="0.1" value="6.8">
+
+<span id="ph-value" class="range-value">6.8</span>
+
+</div>
+
+</div>
+
+
+
+<button type="button" id="analyze-btn" class="btn" style="width:100%">
+
+Analyze Soil & Generate Recommendations
+
+</button>
+
+</form>
+
+</div>
+
+
+
+<div class="results-panel">
+
+<div class="results-header">
+
+<h3>Analysis Results</h3>
+
+<div class="weather-info">
+
+<span class="weather-icon">☀️</span>
+
+<span>Sunny, 78°F</span>
+
+</div>
+
+</div>
+
+
+
+<div class="charts-container">
+
+<div class="chart-card">
+
+<h4>Soil Nutrient Levels</h4>
+
+<canvas id="nutrient-chart"></canvas>
+
+</div>
+
+
+
+<div class="chart-card">
+
+<h4>Optimal Crop Suitability</h4>
+
+<canvas id="crop-chart"></canvas>
+
+</div>
+
+</div>
+
+
+
+<div class="recommendations">
+
+<h3>AI Recommendations</h3>
+
+<div class="recommendation-card">
+
+<h4>Recommended Crops</h4>
+
+<p id="recommended-crops">
+
+Most suitable crops: <strong>Corn, Soybeans, Alfalfa</strong>
+
+</p>
+
+</div>
+
+
+
+<div class="recommendation-card">
+
+<h4>Fertilizer Suggestions</h4>
+
+<p id="fertilizer-suggestion">
+
+Phosphorus deficiency detected. Apply NPK fertilizer with higher P content (10-20-10).
+
+</p>
+
+</div>
+
+
+
+<div class="recommendation-card">
+
+<h4>Planting Schedule</h4>
+
+<p id="planting-schedule">
+
+Optimal planting window: April 15-30.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="chatbot" class="chatbot">
+
+<div class="container">
+
+<h2 class="section-title">Ask Our AI Agricultural Assistant</h2>
+
+<div class="chat-container">
+
+<div class="chat-header">
+
+<h3>Intellicrop AI Assistant</h3>
+
+</div>
+
+
+
+<div class="chat-messages" id="chat-messages">
+
+<div class="message bot-message">
+
+Hello! I'm your agricultural AI assistant. How can I help?
+
+</div>
+
+</div>
+
+
+
+<div class="chat-input">
+
+<input type="text" id="chat-input" placeholder="Ask a question about farming...">
+
+<button class="btn" id="send-btn">Send</button>
+
+<button class="btn" id="voice-btn">🎤 Speak</button>
+
+<button class="btn" id="read-btn">🔊 Read</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="tips">
+
+<div class="container">
+
+<h2 class="section-title">Simple Farming Tips</h2>
+
+<ul style="font-size:18px; line-height:2">
+
+<li>🌱 Water crops early in the morning</li>
+
+<li>🐛 Use neem oil for pest control</li>
+
+<li>🌾 Rotate crops every season</li>
+
+<li>💧 Avoid over irrigation</li>
+
+<li>🌤 Check weather before applying fertilizer</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<h3>Intellicrop</h3>
+
+<p>Empowering farmers with AI-driven insights for productive farming.</p>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#chatbot">AI Assistant</a></li>
+
+</ul>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h3>Technology</h3>
+
+<ul>
+
+<li>Gemini AI</li>
+
+<li>OpenWeatherMap API</li>
+
+<li>Node.js Backend</li>
+
+<li>MongoDB</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<div class="copyright">
+
+<p>© 2025 Intellicrop. All rights reserved.</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+</body>
+
+</html>

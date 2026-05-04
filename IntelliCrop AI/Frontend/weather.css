@@ -1,0 +1,129 @@
+/* ---------------- WEATHER PAGE STYLE ---------------- */
+
+body {
+    background: #f0ffe8;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER FIX */
+header {
+    background: #2b7a0b;
+    padding: 15px 0;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+header nav ul li a.active {
+    background: #fff;
+    color: #2b7a0b;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* HERO SECTION */
+.weather-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #2b7a0b, #3cb043);
+    color: white;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #ffe600;
+}
+
+/* CURRENT WEATHER */
+.weather-container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.weather-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.weather-card .temp {
+    font-size: 40px;
+    color: #2b7a0b;
+    font-weight: bold;
+}
+
+.crop-suggest {
+    margin-top: 10px;
+    background: #eaffc9;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* FORECAST GRID */
+.forecast-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #2b7a0b;
+    font-weight: bold;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.forecast-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 15px;
+}
+
+/* ANIMATIONS */
+.fadeIn {
+    animation: fadeIn 0.8s ease;
+}
+.fadeInUp {
+    animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}

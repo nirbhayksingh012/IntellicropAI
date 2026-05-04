@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntelliCrop – Weather</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="weather.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo"><h1>IntelliCrop AI</h1></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#dashboard">Dashboard</a></li>
+        <li><a href="index.html#chatbot">AI Assistant</a></li>
+        <li><a class="active" href="weather.html">Weather</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="weather-hero">
+  <h2>Weather Forecast</h2>
+  <p>Get accurate weather insights for smarter crop planning.</p>
+
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Enter city name...">
+    <button id="getWeatherBtn">Get Weather</button>
+  </div>
+</section>
+
+<section class="weather-container">
+  <div class="current-weather" id="currentWeather"></div>
+
+  <h3 class="forecast-title">5-Day Forecast</h3>
+  <div class="forecast-grid" id="forecastGrid"></div>
+</section>
+
+<script src="weather.js"></script>
+</body>
+</html>
